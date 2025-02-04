@@ -1,3 +1,5 @@
+#Advanced JavaScript Concepts
+
 This repository contains a series of advanced JavaScript tutorial materials, with links and examples.
 
 They are derived from a series of YouTube video tutorials from Dave Gray. The entire playlist is found [here](https://www.youtube.com/playlist?list=PL0Zuz27SZ-6N3bG4YZhkrCL3ZmDcLTuGd). 
