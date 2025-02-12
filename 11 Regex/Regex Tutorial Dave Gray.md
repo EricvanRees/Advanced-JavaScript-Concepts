@@ -98,13 +98,54 @@ Use [Regexr.com](https://regexr.com/) for creating and testing regex.
 
 /(g|l)ive/gm = selects words like "live" and "give"
 
+****
 
+## Practical Examples
 
+select "10001":
 
+/(^\d{5}$)/gm = select 5 digits in string
 
+select "10001-1234":
 
+/(^\d{5}$)-?(d\{4}$)/gm
 
+select 
+"10001
+10001-1234" by making the second group optional with a question mark:
 
+/(^\d{5}$)-?(d\{4}$)?/gm
 
+select whitespace in "Kansas........City":
+
+/\s/gm
+
+select 
+867-5309
+867.5309
+867*5309
+555-867-5309
++1*555*867*5309
+
+specify last 4 digits:
+/(/d{4})/gm
+
+add optional hyphen:
+/[-](/d{4})/gm
+
+Most special characters do not need to be escaped with a "\" inside of a character set
+
+add more special characters:
+/[-.*](/d{4})/gm
+
+add the first 3 digits (not optional, but required):
+/(\d{3})[-.*](/d{4})/gm
+
+add another optional group of 3 + special characters:
+/(\d{3})?[-.*]?(\d{3})[-.*](/d{4})/gm
+
+add another series of optional special characters and a "+" sign that needs to be escaped:
+
+/(\+1)[-.*](\d{3})?[-.*]?(\d{3})[-.*](/d{4})/gm
 
 
