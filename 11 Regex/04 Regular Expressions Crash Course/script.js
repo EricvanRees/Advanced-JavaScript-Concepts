@@ -1,6 +1,6 @@
 // Using the "test" method, returns true or false
 
-l/* et sentence = "The dog chased the cat."
+/* let sentence = "The dog chased the cat."
 
 let regex = /the/ 
 
@@ -32,7 +32,7 @@ let result = fccRegex.test(myString); */ // logs true
 // Extract Matches
 // use the match method to extract matches
 
-l/* et extractStr = "Extract the word 'coding' from this string.";
+/* let extractStr = "Extract the word 'coding' from this string.";
 let codingRegex = /coding/;
 let result = extractStr.match(codingRegex); */ // logs "coding"
 
@@ -148,6 +148,69 @@ let result = text.match(myRegex); // returns the whole string
 
 
 console.log(result); */
+
+// Challenge
+
+/* let crowd = 'P1P2P3P4P5P6CCCP7P8P9';
+
+let reCriminals = /C+/g;
+
+let matchedCiminals = crowd.match(reCriminals);
+console.log(matchedCiminals); */
+
+// Match Beginning String Patterns
+// outside of brackets, a carrot char is used to match the beginning of a string
+
+/* let rickyAndCal = "Cal and Ricky both like racing."
+let calRegex = /^Cal/; // logs true
+let result = calRegex.test(rickyAndCal);
+console.log(result); */
+
+// Match Ending String Parts
+// use dollar sign
+
+/* let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/;
+let result = lastRegex.test(caboose); 
+console.log(result); // true */
+
+// Match All Letters and Numbers
+// /\w/ = matches capital a-z, lowercase a-z, digits 0-9 and _
+
+/* let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g;
+let result = quoteSample.match(alphabetRegexV2).length;
+console.log(result); // 31, length of string excluding spaces and period. */
+
+// Match Everything But Letters and Numbers
+// use "W"
+
+/* let quoteSample = "The five boxing wizards jump quickly."
+let nonAlphabetRegex = /\W/g;
+let result = quoteSample.match(nonAlphabetRegex).length;
+console.log(result); // logs 6 */
+
+// Match All Numbers
+// \d - match all digits
+
+/* let numString = "Your sandwich will be $5.00";
+let numRegex = /\d/g;
+let result = numString.match(numRegex).length;
+console.log(result); // logs 3 */
+
+// Match All Non-Numbers
+// use "\D"
+
+/* let numString = "Your sandwich will be $5.00";
+let numRegex = /\D/g;
+let result = numString.match(numRegex).length;
+console.log(result); // logs 24 */
+
+// Restrict Possible Usernames
+
+
+
+
 
 
 
