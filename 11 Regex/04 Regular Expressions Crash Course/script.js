@@ -93,7 +93,63 @@ let result = quoteSample.match(myRegex);
 
 console.log(result); // logs every number and letter in the defined range */
 
-// Match Single Characters Not Specified
+/* // Match Single Characters Not Specified
+// = chars you don't want to match (negated chars)
+// use carrot char
+
+let quoteSample = "3 blind mice."
+let myRegex = /[^0-9aeiou]/ig;
+let result = quoteSample.match(myRegex);
+
+console.log(result); // returns everything except vowel and numbers */
+
+// Match Characters that Occur One or More Times
+
+/* let difficultSpelling = "Mississippi";
+let myRegex = /s+/g;
+let result = difficultSpelling.match(myRegex);
+
+console.log(result); // logs ["ss", "ss"] */
+
+// Match Characters that Occur Zero or More Times
+// use the star (*) character
+
+/* let soccerWord = "goooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/
+
+/* soccerWord.match(goRegex); // returns ["gooooo"]
+gPhrase.match(goRegex); // returns ["g"]
+oPhrase.match(goRegex); // returns null
+
+let chewieQuote = "Aaaaaaaaaaaaaaaaaargh!";
+let chewieRegex = /Aa*/;
+/* let result = chewieQuote.match(chewieRegex);
+
+console.log(result);   */
+
+// Find Characters with Lazy Matching
+
+// A greedy match finds the longest possible part of a string that fits the regex pattern, while a lazy match finds the smallest possible part of a string that matches the regex pattern. Regex patterns default to greedy.
+
+/* let string = "titanic";
+let regex = /t[a-z]*i/; // t + zero or more letters + letter i at the end
+string.match(regex); // greedy match logs "titani"
+
+// lazy match: let regex = /t[a-z]*?i/, logs "ti"
+
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*>/; // = Zero or more occurances of any chars = greedy match
+
+// lazy match let myRegex= /<.*?>/; logs ["<h1>"]
+
+let result = text.match(myRegex); // returns the whole string
+
+
+console.log(result); */
+
+
 
 
 
