@@ -124,7 +124,7 @@ gPhrase.match(goRegex); // returns ["g"]
 oPhrase.match(goRegex); // returns null
 
 let chewieQuote = "Aaaaaaaaaaaaaaaaaargh!";
-let chewieRegex = /Aa*/;
+let chewieRegex = /Aa*/
 /* let result = chewieQuote.match(chewieRegex);
 
 console.log(result);   */
@@ -275,15 +275,50 @@ noquit.match(qRegex); // returns ["q"] */
 
 // a more practical example of lookaheads is to check for more patterns in one string, such as looking for passwords of at least 5 chars long with 2 consecutive digits.
 
-let sampleWord = 'astronaut22';
+/* let sampleWord = 'astronaut22';
 let pwRegex = /(?=\w{5})(?=\D*\d{2})/;
 let result = pwRegex.test(sampleWord);
 
-console.log(result); // returns false
+console.log(result); // returns false */
 
 // Reuse Patterns Using Capture Groups
- 
+// use parentheses to group things you're searching for. You can also use them to repeat substrings usng a slash and a number: "\1"
 
+/* let repeatStr = "regex regex";
+let repeatRegex = /(w+)\s\1/;
+repeatRegex.test(repeatStr); // returns true
+repeatStr.match(repeatRegex); // returns ["regex regex", "regex"], or the full string and whatever is in the capture group
+
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/;
+let result = reRegex.test(repeatNum);
+
+console.log(result); */
+
+// Use Capture Groups to Search and Replace
+// use the replace function
+
+/* let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue");
+// returns "The sky is blue."
+
+"Code Camp".replace(/(w+)\s(\w+)/, '$2 $1');
+// returns "Camp Code"
+
+let huhText = "This sandwich is good.";
+let fixRegex = /good/;
+let replaceText = "bad";
+let result = huhText.replace(fixRegex, replaceText);
+
+console.log(result); */
+
+// Remove Whitespace from Start to End
+
+/* let hello = "      Hello, World!    ";
+let wsRegex = /^\s+|\s+$/g; // pipe char means "or"
+let result = hello.replace(wsRegex, "");
+console.log(result); */
 
 
 
