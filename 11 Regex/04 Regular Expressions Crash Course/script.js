@@ -208,6 +208,86 @@ console.log(result); // logs 24 */
 
 // Restrict Possible Usernames
 
+// There are 4 requirements:
+// 1) If there are numbers, they must be at the end.
+// 2) Letters can be lowercase and uppercase.
+// 3) At least two characters long. 
+// 4) Two-letter names can't have numbers.
+
+/* let username = "JackOfAllTrades";
+let userCheck = /^[A-Za-z]{2,}\d*$/; 
+let result = userCheck.test(username); */
+
+// Match Whitespace
+
+/* let sample = "Whitespace is important in separating words."
+let countWhiteSpace = /\s/g; // logs all whitespaces as " "
+let result = sample.match(countWhiteSpace);
+console.log(result); */
+
+// Match Non-Whitespace Characters
+// use \S
+
+/* let sample = "Whitespace is important in separating words."
+let countWhiteSpace = /\S/g; // logs all whitespaces as " "
+let result = sample.match(countWhiteSpace);
+console.log(result);  */
+
+// Specify Upper and Lower Number of Matches
+// use quantity specifiers (curly brackets)
+
+/* let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/;
+let result = ohRegex.test(ohStr);
+
+console.log(result); // logs true */
+
+// Specify Only the Lower Number of Matches
+// using /z{4,}/ = a number followed by a comma
+
+/* let haStr = "Hazzzzaz";
+let haRegex =  /z{4,}/;
+let result = haRegex.test(haStr); */
+
+// Specify Exact Number of Matches
+// = single number within curly braces
+
+/* let timStr =  "Timmmmber";
+let timRegex = /Tim{4}ber/; // looks for 4 m's
+let result = timRegex.test(timStr); */
+
+// Check for All or None
+// a question mark checks for zero or one of the preceding elements
+
+/* let favWord = "favorite";
+let favRegex = /favou?rite/; // string may or may not have a "u"
+let result =  favRegex.test(favWord); */
+
+// Positive and Negative Lookhahead
+// Lookaheads are patterns that tell JS to look ahead in your string to check for patterns further along. This can be useful if you want to search for multiple patterns over the same string. There are positve and negative lookaheads.
+
+/* let quit = "qu";
+let noquit = "qt";
+let quRegex = /q(?=u)/; // positive LA: look for a "u", but without returning it
+let qRegex = /q(?!u)/; // negative LA: make sure the "u" is NOT present later in the string
+quit.match(quRegex); // returns ["q"]
+noquit.match(qRegex); // returns ["q"] */
+
+// a more practical example of lookaheads is to check for more patterns in one string, such as looking for passwords of at least 5 chars long with 2 consecutive digits.
+
+let sampleWord = 'astronaut22';
+let pwRegex = /(?=\w{5})(?=\D*\d{2})/;
+let result = pwRegex.test(sampleWord);
+
+console.log(result); // returns false
+
+// Reuse Patterns Using Capture Groups
+ 
+
+
+
+
+
 
 
 
