@@ -22,7 +22,11 @@ console.log(app.next()); */
 
 // iterators and iterables are not the same!
 
-/* Iterators provide a standardized way to access elements sequentially, while iterables are objects that define the iteration behavior by implementing the iterator protocol. */
+/* Iterators provide a standardized way to access elements sequentially, while iterables are objects that define the iteration behavior by implementing the iterator protocol. 
+
+see: https://www.connectwise.com/blog/engineering/iterators-and-iterables-in-javascript 
+
+*/
 
 // the following won't work, which is iterating over the object:
 /* for (const team of app) {
